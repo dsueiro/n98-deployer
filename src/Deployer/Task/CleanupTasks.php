@@ -47,7 +47,7 @@ class CleanupTasks extends TaskAbstract
         }
 
         foreach ($releases as $release) {
-            \Deployer\run("sudo rm -rf {{deploy_path}}/releases/$release");
+            \Deployer\run("rm -rf {{deploy_path}}/releases/$release");
         }
 
         \Deployer\run('cd {{deploy_path}} && if [ -e release ]; then rm release; fi');
